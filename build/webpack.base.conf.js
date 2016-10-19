@@ -3,6 +3,13 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
+var env = process.env.NODE_ENV
+// check env & config/index.js to decide weither to enable CSS Sourcemaps for the
+// various preprocessor loaders added to vue-loader at the end of this file
+var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
+var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
+var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
+
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -16,15 +23,10 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
+      'vue$': 'vue/dist/vue',
       'src': path.resolve(__dirname, '../src'),
-<<<<<<< HEAD
-      // 'assets': path.resolve(__dirname, '../src/assets'),
-      // 'components': path.resolve(__dirname, '../src/components'),
-      'vue': 'vue/dist/vue',
-=======
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components')
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
     }
   },
   resolveLoader: {
@@ -61,13 +63,6 @@ module.exports = {
         loader: 'json'
       },
       {
-<<<<<<< HEAD
-=======
-        test: /\.html$/,
-        loader: 'vue-html'
-      },
-      {
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {
@@ -89,15 +84,11 @@ module.exports = {
     formatter: require('eslint-friendly-formatter')
   },
   vue: {
-<<<<<<< HEAD
-    loaders: utils.cssLoaders(),
+    loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
     postcss: [
       require('autoprefixer')({
         browsers: ['last 2 versions']
       })
     ]
-=======
-    loaders: utils.cssLoaders()
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
   }
 }

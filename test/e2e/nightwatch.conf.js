@@ -1,8 +1,5 @@
 require('babel-register')
-<<<<<<< HEAD
 var config = require('../../config')
-=======
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
 
 // http://nightwatchjs.org/guide#settings-file
 module.exports = {
@@ -12,11 +9,7 @@ module.exports = {
 
   "selenium": {
     "start_process": true,
-<<<<<<< HEAD
     "server_path": "node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.1.jar",
-=======
-    "server_path": "node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.0.jar",
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
     "host": "127.0.0.1",
     "port": 4444,
     "cli_args": {
@@ -28,14 +21,10 @@ module.exports = {
     "default": {
       "selenium_port": 4444,
       "selenium_host": "localhost",
-<<<<<<< HEAD
       "silent": true,
       "globals": {
         "devServerURL": "http://localhost:" + (process.env.PORT || config.dev.port)
       }
-=======
-      "silent": true
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
     },
 
     "chrome": {

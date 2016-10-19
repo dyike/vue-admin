@@ -1,11 +1,9 @@
+var config = require('../config')
+if (!process.env.NODE_ENV) process.env.NODE_ENV = config.dev.env
 var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
-var config = require('../config')
-<<<<<<< HEAD
 var opn = require('opn')
-=======
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
@@ -65,11 +63,7 @@ module.exports = app.listen(port, function (err) {
     console.log(err)
     return
   }
-<<<<<<< HEAD
   var uri = 'http://localhost:' + port
   console.log('Listening at ' + uri + '\n')
   opn(uri)
-=======
-  console.log('Listening at http://localhost:' + port + '\n')
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
 })

@@ -1,5 +1,6 @@
-# demo
-> A Vue.js project -- learn Vue and build Vue-admin
+# vue-admin
+
+> A Vue.js project
 
 ## Build Setup
 

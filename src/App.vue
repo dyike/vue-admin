@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div id="app">
     <TopBar></TopBar>
     <el-row type="flex">
@@ -21,12 +20,3 @@ export default {
   }
 }
 </script>
-=======
-  <router-view></router-view>
-</template>
-<style>
-  * {
-    font-family: 'Hiragino Sans GB', 'Microsoft Yahei', SimSun;
-  }
-</style>
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
