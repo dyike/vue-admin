@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-# my-project
-=======
 # demo
->>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
-
-> A Vue.js project
+> A Vue.js project -- learn Vue and build Vue-admin
 
 ## Build Setup
 
