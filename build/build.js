@@ -20,7 +20,11 @@ spinner.start()
 var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
+<<<<<<< HEAD
+cp('-R', 'static/*', assetsPath)
+=======
 cp('-R', 'static/', assetsPath)
+>>>>>>> 6acfd24917cff792dfc4cf5556bff16d48bd0ba2
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
