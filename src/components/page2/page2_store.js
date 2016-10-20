@@ -11,10 +11,10 @@ const state = {
 // 每一个 mutation管理者，第一个参数为 完整的state树,  其次是附加的装载参数
 // mutations 须是同步的，并且可以通过插件或调试目的记录
 const mutations = {
-    addone(state) {
+    addone (state) {
         state.count++
     },
-    subtractone(state) {
+    subtractone (state) {
         state.count--
     }
 }
@@ -25,7 +25,11 @@ const mutations = {
 const actions = {
     addone: ({
         commit
-    }) => commit('addone')
+    }) => commit('addone'),
+
+    subtractone: ({
+        commit
+    }) => commit('subtractone'),
 
     addoneIfOdd({
         commit,
@@ -38,17 +42,17 @@ const actions = {
     addonAsync({
         commit
     }) {
-        return new Promise(resolve, reject) => {
+        return new Promise((resolve, reject) => {
             setTimeOut(() => {
                 commit('addone')
                 resolve()
             }, 1000)
-        }
+        })
     }
 }
 
 const getters = {
-    evenOrOdd: state => state.count % 2 === 0 ? '偶数' : '奇数'
+    evenorodd: state => state.count % 2 === 0 ? '偶数' : '奇数'
 }
 
 // Vuex 实例依  state, mutations, actions,and getters 组合
