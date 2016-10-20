@@ -1,31 +1,32 @@
 <template>
-    <div>
-        <h1>{{ count }}</h1>
-        <button class="btn" @click="addone">add one</button>
+    <div id="app">
+        <h1>点击: {{ $store.state.count }}次, 此数为 {{ evenorodd }}</h1>
+        <button clas="btn" @click="addone">+one</button>
+        <button class="btn", @click="subtractone">-one</button>
+        <button class="btn", @click="addoneIfOdd">当奇数时，加一</button>
+        <button class="btn", @click="addoneAsync">1秒后，加一</button>
     </div>
 </template>
 
-<script type="text/javascript">
+<script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-// state（状态)
-  data () {
-    return {
-      count: 0
-    }
-  },
-  methods: {
-    // action(动作)
-    addone () {
-      this.count += 1
-    }
-  }
+  computed: mapGetters([
+    'evenorodd'
+  ]),
+  methods: mapActions([
+    'addone',
+    'subtractone',
+    'addoneIfOdd',
+    'addoneAsync'
+  ])
 }
 </script>
 
 <style scoped>
 h1 {
   color: #42b983;
-  text-align: center;
 }
 .btn {
   background: #3498db;
@@ -43,7 +44,6 @@ h1 {
   padding: 10px 20px 10px 20px;
   text-decoration: none;
 }
-
 .btn:hover {
   background: #3cb0fd;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
