@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <TopBar></TopBar>
-    <el-row type="flex">
-      <NavMenu></NavMenu>
-      <Container></Container>
-    </el-row>
+    <img src="./assets/logo.png">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import './components/common/style.scss'
-import TopBar from './components/common/TopBar.vue'
-import NavMenu from './components/common/NavMenu.vue'
-import Container from './components/common/Container.vue'
-
 export default {
-  components: {
-    TopBar, NavMenu, Container
-  }
+  name: 'app'
 }
 </script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
