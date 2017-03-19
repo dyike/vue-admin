@@ -2,17 +2,17 @@
     <div class="login-wrap">
         <div class="va-title">后台管理系统</div>
         <div class="va-login">
-            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-                <el-form-item label="用户名" prop="username">
+            <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm">
+                <el-form-item prop="username">
                     <el-input v-model="ruleForm.username" placeholder="用户名"></el-input>
                 </el-form-item>
-                <el-form-item label="密码" prop="password">
+                <el-form-item prop="password">
                     <el-input type="password" v-model="ruleForm.password" placeholder="密码" @keyup.enter.native="submitForm('ruleForm')"></el-input>
                 </el-form-item>
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
                 </div>
-                <p style="font-size:12px;line-height:30px;color:#999;">这儿是放点是提示文字</p>
+                <p style="font-size:12px;line-height:30px;color:#999;">这儿是放点提示文字,瞎填就行了</p>
             </el-form>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        data() {
+        data: function () {
             return {
                 ruleForm: {
                     username: '',
@@ -40,7 +40,8 @@
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        alert('submit!');
+                        localStorage.setItem('va_username', this.ruleForm.username);
+                        this.$router.push('/readme');
                     } else {
                         console.log('error submit!!');
                         return false;

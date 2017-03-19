@@ -1,7 +1,9 @@
 <template>
     <div class="sidebar">
-        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" unique-opened router theme="dark">
-            <el-menu-item index="about"><i class="el-icon-information"></i>介绍</el-menu-item>
+        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+            <el-menu-item index="admin">
+                <i class="el-icon-information"></i>介绍
+            </el-menu-item>
 
             <el-submenu index="2">
                 <template slot="title"><i class="el-icon-message"></i>导航一</template>
