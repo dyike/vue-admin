@@ -11,19 +11,19 @@ export default new Router({
     },
     {
       path: '/login',
-      component: resovle => require(['../components/page/Login.vue'], resovle)
+      component: resolve => require(['../components/page/Login.vue'], resolve)
     },
     {
       path: '/admin',
-      component: resovle => require(['../components/common/Home.vue'], resovle),
+      component: resolve => require(['../components/common/Home.vue'], resolve),
       children: [
         {
-          path: '/readme',
-          component: resovle => require(['../components/page/About.vue'], reslove)
+          path: '/about',
+          component: resolve => require(['../components/page/About.vue'], resolve)
         },
         {
           path: '/baseform',
-          component: resovle => require(['../components/page/BaseForm.vue'], resovle)
+          component: resolve => require(['../components/page/BaseForm.vue'], resolve)
         }
       ]
     }

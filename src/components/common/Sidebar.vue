@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
         <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
-            <el-menu-item index="admin">
+            <el-menu-item index="about">
                 <i class="el-icon-information"></i>介绍
             </el-menu-item>
 
