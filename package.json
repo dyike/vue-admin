@@ -15,7 +15,9 @@
     "axios": "^0.15.3",
     "element-ui": "^1.2.5",
     "vue": "^2.2.2",
-    "vue-router": "^2.2.0"
+    "vue-router": "^2.2.0",
+    "vue2-highcharts": "^1.0.2",
+    "highcharts": "^5.0.7"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

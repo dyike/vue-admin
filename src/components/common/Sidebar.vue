@@ -34,7 +34,13 @@
                 </el-menu-item-group>
             </el-submenu>
 
-            <el-menu-item index="4"><i class="el-icon-setting"></i>导航三</el-menu-item>
+            <el-submenu index="4">
+                <template slot="title"><i class="el-icon-picture"></i>图表统计</template>
+                <el-menu-item-group>
+                    <el-menu-item index="/chart/1">折线图</el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
+
         </el-menu>
     </div>
 </template>
@@ -43,7 +49,7 @@
         computed: {
             onRoutes() {
                 console.log(this.$route.path)
-                //return this.$route.path.replace('/', '')
+                return this.$route.path.replace('/', '')
             }
         }
     }

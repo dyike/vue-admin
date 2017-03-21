@@ -32,6 +32,10 @@ export default new Router({
         {
           path: '/list/edit',
           component: resolve => require(['../components/page/Edit.vue'], resolve)
+        },
+        {
+          path: '/chart/1',
+          component: resolve => require(['../components/page/Charts1.vue'], resolve)
         }
 
       ]
