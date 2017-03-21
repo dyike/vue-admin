@@ -40,11 +40,11 @@
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        localStorage.setItem('va_username', this.ruleForm.username);
-                        this.$router.push('/about');
+                        localStorage.setItem('va_username', this.ruleForm.username)
+                        this.$router.push('/about')
                     } else {
                         console.log('error submit!!');
-                        return false;
+                        return false
                     }
                 });
             }
