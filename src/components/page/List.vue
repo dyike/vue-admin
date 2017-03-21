@@ -37,6 +37,8 @@
         </div>
 
         <el-table :data="tableData" border style="width: 100%">
+            <el-table-column prop="id" label="ID" sortable width="120">
+            </el-table-column>
             <el-table-column prop="date" label="日期" sortable width="150">
             </el-table-column>
             <el-table-column prop="name" label="姓名" width="120">
@@ -86,21 +88,25 @@
           date2: ''
         },
         tableData: [{
+          id: 1,
           date: '2016-05-02',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄',
           tag: '家'
         }, {
+          id: 2,
           date: '2016-05-04',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1517 弄',
           tag: '家'
         }, {
+          id: 3,
           date: '2016-05-01',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1519 弄',
           tag: '公司'
         }, {
+          id: 4,
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄',
@@ -122,6 +128,7 @@
       },
       handleEdit(index, row) {
         console.log(index, row);
+        this.$router.push('/list/edit');
       },
       handleDelete(index, row) {
         console.log(index, row);
@@ -144,12 +151,6 @@
   .top-search {
     position: relative;
     padding-top: 8px;
-  }
-
-  .top-button {
-    position: relative;
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
 </style>
 

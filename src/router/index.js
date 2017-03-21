@@ -28,7 +28,12 @@ export default new Router({
         {
           path: '/list',
           component: resolve => require(['../components/page/List.vue'], resolve)
+        },
+        {
+          path: '/list/edit',
+          component: resolve => require(['../components/page/Edit.vue'], resolve)
         }
+
       ]
     }
   ]

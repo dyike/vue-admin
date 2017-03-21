@@ -11,7 +11,7 @@
 
                 <el-menu-item-group>
                     <template slot="title">分组一</template>
-                    <el-menu-item index="baseform">基础表单</el-menu-item>
+                    <el-menu-item index="/baseform">基础表单</el-menu-item>
                     <el-menu-item index="1-2">选项2</el-menu-item>
                 </el-menu-item-group>
 
@@ -30,7 +30,7 @@
                 <template slot="title"><i class="el-icon-menu"></i>列表管理</template>
                 <el-menu-item-group>
                     <template slot="title">列表</template>
-                    <el-menu-item index="list">列表管理</el-menu-item>
+                    <el-menu-item index="/list">列表管理</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
 
@@ -42,7 +42,8 @@
     export default {
         computed: {
             onRoutes() {
-                return this.$route.path.replace('/', '')
+                console.log(this.$route.path)
+                //return this.$route.path.replace('/', '')
             }
         }
     }
