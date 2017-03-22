@@ -34,8 +34,20 @@ export default new Router({
           component: resolve => require(['../components/page/Edit.vue'], resolve)
         },
         {
-          path: '/chart/1',
-          component: resolve => require(['../components/page/Charts1.vue'], resolve)
+          path: '/chart/line',
+          component: resolve => require(['../components/page/LineCharts.vue'], resolve)
+        },
+        {
+          path: '/chart/area',
+          component: resolve => require(['../components/page/AreaCharts.vue'], resolve)
+        },
+        {
+          path: '/chart/pie',
+          component: resolve => require(['../components/page/PieCharts.vue'], resolve)
+        },
+        {
+          path: '/chart/column',
+          component: resolve => require(['../components/page/ColumnCharts.vue'], resolve)
         }
 
       ]

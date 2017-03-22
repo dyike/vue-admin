@@ -37,7 +37,10 @@
             <el-submenu index="4">
                 <template slot="title"><i class="el-icon-picture"></i>图表统计</template>
                 <el-menu-item-group>
-                    <el-menu-item index="/chart/1">折线图</el-menu-item>
+                    <el-menu-item index="/chart/line">折线图</el-menu-item>
+                    <el-menu-item index="/chart/area">区块图</el-menu-item>
+                    <el-menu-item index="/chart/pie">饼形图</el-menu-item>
+                    <el-menu-item index="/chart/column">柱状图</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
 
