@@ -76,8 +76,8 @@
         },
         methods: {
             onSubmit() {
+                this.$message.success('更新成功！')
                 this.$router.push('/list')
-                console.log('submit!')
             },
             onCancle() {
                 this.$router.push('/list')

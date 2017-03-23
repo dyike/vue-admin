@@ -22,6 +22,24 @@ export default new Router({
           component: resolve => require(['../components/page/About.vue'], resolve)
         },
         {
+          path: '/system',
+          component: resolve => require(['../components/page/System.vue'], resolve),
+          // children: [
+          //   {
+          //     path: 'base',
+          //     component: resolve => require(['../components/page/System.vue'], resolve)
+          //   },
+          //   {
+          //     path: 'securty',
+          //     component: resolve => require(['../components/page/System.vue'], resolve)
+          //   },
+          //   {
+          //     path: 'others',
+          //     component: resolve => require(['../components/page/System.vue'], resolve)
+          //   }
+          // ]
+        },
+        {
           path: '/baseform',
           component: resolve => require(['../components/page/BaseForm.vue'], resolve)
         },
@@ -30,7 +48,7 @@ export default new Router({
           component: resolve => require(['../components/page/List.vue'], resolve)
         },
         {
-          path: '/list/edit',
+          path: '/list/:id/edit',
           component: resolve => require(['../components/page/Edit.vue'], resolve)
         },
         {

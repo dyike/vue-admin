@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="about">
+    <div class="about">
+        <div class="crumbs">
             <el-breadcrumb separator="/about">
                 <el-breadcrumb-item><i class="el-icon-setting"></i>介绍</el-breadcrumb-item>
             </el-breadcrumb>

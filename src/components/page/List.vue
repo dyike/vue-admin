@@ -124,8 +124,8 @@
         return row.tag === value;
       },
       handleEdit(index, row) {
-        console.log(index, row)
-        this.$router.push('/list/edit')
+        console.log(row)
+        this.$router.push('/list/'+row.id+'/edit')
       },
       handleDelete(index, rows) {
           rows.splice(index, 1)

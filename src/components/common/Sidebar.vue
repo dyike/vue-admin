@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
         <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
-            <el-menu-item index="about">
+            <el-menu-item index="/about">
                 <i class="el-icon-information"></i>介绍
             </el-menu-item>
 
@@ -43,6 +43,10 @@
                     <el-menu-item index="/chart/column">柱状图</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
+
+            <el-menu-item index="/system">
+                <i class="el-icon-setting"></i>系统配置
+            </el-menu-item>
 
         </el-menu>
     </div>
