@@ -6,6 +6,9 @@
         <el-breadcrumb-item> 折线图</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
+    <div class="plugins-tips" style="color: red">
+        特别声明: Highcharts 是一个用纯 JavaScript编写的一个图表库，仅免费提供给个人学习、个人网站，如果在商业项目中使用，请去Highcharts官网网站购买商业授权。或者您也可以选择其他免费开源图表插件，比如百度echarts。vue-admin不承担任何版权问题。
+    </div>
     <section class="charts">
         <h3>Line Basic</h3>
         <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>

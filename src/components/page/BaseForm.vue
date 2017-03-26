@@ -13,9 +13,9 @@
                 </el-form-item>
                 <el-form-item label="选择器">
                     <el-select v-model="form.region" placeholder="请选择">
-                        <el-option label="步步高" value="bbk"></el-option>
-                        <el-option label="小天才" value="xtc"></el-option>
-                        <el-option label="imoo" value="imoo"></el-option>
+                        <el-option label="Mac Pro" value="bbk"></el-option>
+                        <el-option label="iPhone 7" value="xtc"></el-option>
+                        <el-option label="Macbook Pro" value="imoo"></el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="日期时间">
@@ -32,16 +32,16 @@
                 </el-form-item>
                 <el-form-item label="多选框">
                     <el-checkbox-group v-model="form.type">
-                        <el-checkbox label="步步高" name="type"></el-checkbox>
-                        <el-checkbox label="小天才" name="type"></el-checkbox>
-                        <el-checkbox label="imoo" name="type"></el-checkbox>
+                        <el-checkbox label="Mac Pro" name="type"></el-checkbox>
+                        <el-checkbox label="Macbook Pro" name="type"></el-checkbox>
+                        <el-checkbox label="iPhone 7" name="type"></el-checkbox>
                     </el-checkbox-group>
                 </el-form-item>
                 <el-form-item label="单选框">
                     <el-radio-group v-model="form.resource">
-                        <el-radio label="步步高"></el-radio>
-                        <el-radio label="小天才"></el-radio>
-                        <el-radio label="imoo"></el-radio>
+                        <el-radio label="Mac Pro"></el-radio>
+                        <el-radio label="Macbook Pro"></el-radio>
+                        <el-radio label="iPhone 7"></el-radio>
                     </el-radio-group>
                 </el-form-item>
                 <el-form-item label="文本框">
@@ -67,8 +67,8 @@
                     date1: '',
                     date2: '',
                     delivery: true,
-                    type: ['步步高'],
-                    resource: '小天才',
+                    type: ['iPhone 7'],
+                    resource: 'Mac Pro',
                     desc: ''
                 }
             }

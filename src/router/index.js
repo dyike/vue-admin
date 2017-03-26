@@ -44,6 +44,14 @@ export default new Router({
           component: resolve => require(['../components/page/BaseForm.vue'], resolve)
         },
         {
+          path: '/upload',
+          component: resolve => require(['../components/page/Upload.vue'], resolve)
+        },
+        {
+          path: '/editor',
+          component: resolve => require(['../components/page/Editor.vue'], resolve)
+        },
+        {
           path: '/list',
           component: resolve => require(['../components/page/List.vue'], resolve)
         },
