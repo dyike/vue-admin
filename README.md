@@ -21,7 +21,9 @@
 
 ## 特别说明
 
-本方案参考了(Vue-Manage-System)[https://github.com/lin-xin/vue-manage-system] 。在此特别感谢提供了很好的例子的学习！！
+本方案参考学习了Vue-Manage-System [https://github.com/lin-xin/vue-manage-system] 。
+
+在此特别感谢提供了这么棒的例子供大家学习参考！！
 
 ## 使用
 
