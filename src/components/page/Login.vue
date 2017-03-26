@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        data: function () {
+        data () {
             return {
                 ruleForm: {
                     username: '',
@@ -37,7 +37,7 @@
             }
         },
         methods: {
-            submitForm(formName) {
+            submitForm (formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         localStorage.setItem('va_username', this.ruleForm.username)

@@ -2,36 +2,36 @@
     <div class="about">
         <div class="crumbs">
             <el-breadcrumb separator="/about">
-                <el-breadcrumb-item><i class="el-icon-setting"></i>介绍</el-breadcrumb-item>
+                <el-breadcrumb-item><i class="el-icon-setting"></i> 介绍</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="va-doc">
             <h3>README.md</h3>
             <article>
                 <h1>vue-admin</h1>
-                <p>基于Vue.js 2.x系列 + Element UI 的后台管理系统解决方案</p>
+                <p>基于Vue.js 2.x系列 + Element UI 搭建后台管理系统</p>
                 <h2>前言</h2>
-                <p>该方案作为一套多功能的后台框架模板，适用于绝大部分的后台管理系统（Web Management System）开发。基于vue.js,使用vue-cli脚手架快速生成项目目录，引用Element UI组件库，方便开发快速简洁好看的组件。分离颜色样式，支持手动切换主题色，而且很方便使用自定义主题色。</p>
-                <p>该方案作为一套多功能的后台框架模板，适用于绝大部分的后台管理系统（Web Management System）开发。基于vue.js,使用vue-cli脚手架快速生成项目目录，引用Element UI组件库，方便开发快速简洁好看的组件。分离颜色样式，支持手动切换主题色，而且很方便使用自定义主题色。</p>
+                <p>基于vue.js,使用vue-cli脚手架快速生成项目目录，使用Element UI组件库，方便开发快速简洁好看的组件。</p>
+                <p>该方案作为一套多功能的后台框架模板，适用于绝大部分的后台管理系统开发。很灵活的扩展性。</p>
                 <h2>功能</h2>
-                <el-checkbox disabled checked>Element UI</el-checkbox>
+                <el-checkbox disabled checked>使用Element UI</el-checkbox>
                 <br>
-                <el-checkbox disabled checked>登录/注销</el-checkbox>
+                <el-checkbox disabled checked>登录/退出</el-checkbox>
                 <br>
-                <el-checkbox disabled checked>表格</el-checkbox>
+                <el-checkbox disabled checked>列表显示(包括分页，搜索)</el-checkbox>
                 <br>
                 <el-checkbox disabled checked>表单</el-checkbox>
                 <br>
-                <el-checkbox disabled checked>图表</el-checkbox>
+                <el-checkbox disabled checked>图表(HighCharts[仅供学习])</el-checkbox>
                 <br>
-                <el-checkbox disabled checked>富文本编辑器</el-checkbox>
+                <el-checkbox disabled checked>编辑器(富文本编辑，markdown编辑)</el-checkbox>
                 <br>
-                <el-checkbox disabled checked>markdown编辑器</el-checkbox>
+                <el-checkbox disabled checked>图片拖拽上传/图片显示</el-checkbox>
                 <br>
-                <el-checkbox disabled checked>图片拖拽/裁剪上传</el-checkbox>
+                <el-checkbox disabled checked>系统配置(tab页)</el-checkbox>
                 <br>
-                <el-checkbox disabled checked>支持切换主题色</el-checkbox>
-                <br>
+                <h2>其他说明</h2>
+                <p>本方案参考了Vue-Manage-System(https://github.com/lin-xin/vue-manage-system)</p>
             </article>
 
         </div>
