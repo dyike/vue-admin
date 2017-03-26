@@ -23,21 +23,7 @@ export default new Router({
             },
             {
                 path: '/system',
-                component: resolve => require(['../components/page/System.vue'], resolve),
-                // children: [
-                //   {
-                //     path: 'base',
-                //     component: resolve => require(['../components/page/System.vue'], resolve)
-                //   },
-                //   {
-                //     path: 'securty',
-                //     component: resolve => require(['../components/page/System.vue'], resolve)
-                //   },
-                //   {
-                //     path: 'others',
-                //     component: resolve => require(['../components/page/System.vue'], resolve)
-                //   }
-                // ]
+                component: resolve => require(['../components/page/System.vue'], resolve)
             },
             {
                 path: '/baseform',

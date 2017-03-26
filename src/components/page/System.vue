@@ -6,99 +6,60 @@
             </el-breadcrumb>
         </div>
         <div class="tabs">
-            <el-tabs v-model="activeName" @tab-click="handleClick">
-                <el-tab-pane label="基本设置" name="base"></el-tab-pane>
-                <el-tab-pane label="安全设置" name="securty"></el-tab-pane>
-                <el-tab-pane label="其他设置" name="others"></el-tab-pane>
+            <el-tabs v-model="activeName" @tab-click='handleClick'>
+                <el-tab-pane label="基本设置" name="base">
+                    <div style="margin: 20px;"></div>
+                    <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign" ref="formLabelAlign">
+                        <el-form-item label="名称">
+                            <el-input v-model="formLabelAlign.name"></el-input>
+                        </el-form-item>
+                        <el-form-item label="活动区域">
+                            <el-input v-model="formLabelAlign.region"></el-input>
+                        </el-form-item>
+                        <el-form-item label="活动形式">
+                            <el-input v-model="formLabelAlign.type"></el-input>
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button type="primary" @click="saveForm('formLabelAlign')">保存</el-button>
+                            <el-button @click="resetForm('formLabelAlign')">重置</el-button>
+                        </el-form-item>
+                    </el-form>
+                </el-tab-pane>
+                <el-tab-pane label="其他设置" name="others">
+                自行扩展
+                </el-tab-pane>
             </el-tabs>
-            <div>
-                <component :is='currentView1' keep-alive></component>
-            </div>
         </div>
-
-        <div class="tabs">
-                <ul>
-                    <li @click='tabToggle("tab01");'>Tab001</li>
-                    <li @click='tabToggle("tab02");'>Tab002</li>
-                </ul>
-        </div>
-        <div>
-            <component :is='currentView' keep-alive></component>
-        </div>
-
-
     </div>
 </template>
 
 <script>
-
-    // import Form from "../settings/Form"
-    // const BaseComponent = {
-    //     template: Form
-    // }
-    // const SecurtyComponent = {
-    //     template: Form
-    // }
-    // const OthersComponent = {
-    //     template: Form
-    // }
-
-    var tab01 = {
-            template: `<p>This is tab01</p>`
-    }
-
-    var tab02 = {
-            template: `<p>This is tab02</p>`
-    }
-
     export default {
-        components: {
-                tab01: tab01,
-                tab02: tab02
-        },
         data () {
             return {
-                currentView: 'tab01',
-                currentView1: 'tab01',
                 activeName: 'base',
+                labelPosition: 'right',
+                formLabelAlign: {
+                    name: '',
+                    region: '',
+                    type: ''
+                }
             }
         },
         methods: {
-            tabToggle: function(tabText) {
-                this.currentView = tabText
+            handleClick(tab) {
+                // console.log(this.activeName)
+                // this.activeName = tab.name
+                // console.log(this.activeName)
             },
-            handleClick: function(tab) {
-                console.log(tab.name)
-                this.currentView1 = tab.name
+            saveForm (formName) {
+
+            },
+            resetForm(formName) {
+                this.$refs[formName].resetFields();
             }
         }
-
     }
-
-
-    // export default {
-    //     components: {
-    //         'base-component': BaseComponent,
-    //         'securty-component': SecurtyComponent,
-    //         'others-component': OthersComponent
-    //     },
-
-    //     data () {
-    //         return {
-    //             activeName: 'base',
-    //             item: []
-    //         }
-    //     },
-    //     methods: {
-    //         handleClick(component) {
-    //             //console.log(tab)
-    //             this.item.push({
-    //                 'component': component,
-    //             })
-    //             // this.$router.push('/system/' + tab.name)
-    //         }
-    //     }
-    // }
 
 </script>
 
