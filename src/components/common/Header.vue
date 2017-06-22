@@ -8,7 +8,7 @@
                     {{username}}
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="loginout">退出</el-dropdown-item>
+                    <el-dropdown-item @click.native="logout">退出</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
@@ -29,11 +29,16 @@
             }
         },
         methods: {
-            handleCommand(command) {
-                if (command == 'loginout') {
-                    localStorage.removeItem('va_username')
-                    this.$router.push('/login')
-                }
+            logout: function () {
+                var _this = this
+                this.$confirm('确认退出吗?', '提示', {
+
+                }).then(() => {
+                    sessionStorage.removeItem('user')
+                    _this.$router.push('/login')
+                }).catch(() => {
+
+                })
             }
         }
     }
