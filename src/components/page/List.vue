@@ -3,7 +3,7 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item>
-                    <i class="el-icon-menu"></i>表格</el-breadcrumb-item>
+                    <i class="el-icon-menu"></i> 列表管理</el-breadcrumb-item>
                 <el-breadcrumb-item>常用表格</el-breadcrumb-item></el-breadcrumb>
         </div>
         <div class="top-search">

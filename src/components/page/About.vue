@@ -28,6 +28,8 @@
                 <br>
                 <el-checkbox disabled checked>图片拖拽上传/图片显示</el-checkbox>
                 <br>
+                <el-checkbox disabled checked>白板拖拽功能</el-checkbox>
+                <br>
                 <el-checkbox disabled checked>系统配置(tab页)</el-checkbox>
                 <br>
                 <h2>其他说明</h2>

@@ -13,7 +13,7 @@
             </el-submenu>
 
             <el-submenu index="3">
-                <template slot="title"><i class="el-icon-menu"></i>列表管理</template>
+                <template slot="title"><i class="el-icon-minus"></i>列表管理</template>
                 <el-menu-item index="/list">常用表格</el-menu-item>
             </el-submenu>
 
@@ -24,6 +24,10 @@
                 <el-menu-item index="/chart/pie">饼形图</el-menu-item>
                 <el-menu-item index="/chart/column">柱状图</el-menu-item>
             </el-submenu>
+
+            <el-menu-item index="/drag">
+                <i class="el-icon-menu"></i>白板拖拽
+            </el-menu-item>
 
             <el-menu-item index="/system">
                 <i class="el-icon-setting"></i>系统配置
