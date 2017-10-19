@@ -38,11 +38,11 @@
                 <el-table-column prop="name" label="姓名" width="120"></el-table-column>
                 <el-table-column prop="address" label="地址" :formatter="formatter"></el-table-column>
                 <el-table-column prop="tag" label="标签" width="120" :filters="[{ text: '家', value: '家' }, { text: '公司', value: '公司' }]" :filter-method="filterTag">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                         <el-tag :type="scope.row.tag === '家' ? 'primary' : 'success'" close-transition>{{scope.row.tag}}</el-tag></template>
                 </el-table-column>
                 <el-table-column label="操作" width="180">
-                    <template scope="scope">
+                    <template slot-scope="scope">
                         <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                         <el-button size="small" type="danger" @click.native.prevent="handleDelete(scope.$index, tableData)">删除</el-button></template>
                 </el-table-column>
