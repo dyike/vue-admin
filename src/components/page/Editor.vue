@@ -18,14 +18,21 @@
             Vue-SimpleMDE: 是一款适用于Vue1和Vue2的Markdown编辑器。
             访问地址：<a href="https://github.com/F-loat/vue-simplemde" target="_blank">Vue-SimpleMDE</a>
         </div>
-        <markdown-editor ref="markdownEditor" :vuale="content" @input="handleInput" :configs="configs"></markdown-editor>
+
+        <markdown-editor ref="markdownEditor" :value="content" @input="handleInput" :configs="configs"></markdown-editor>
+
         <el-button class="editor-btn" type="primary" @click="submit2">提交</el-button>
 
     </div>
 </template>
 
 <script>
+    import markdownEditor from 'vue-simplemde/src/markdown-editor'
+
     export default {
+        components: {
+            markdownEditor
+        },
         data () {
             return {
                 content: '<p>Hello Vue-Admin</p>',
@@ -73,5 +80,4 @@
         margin-top: 16px;
         margin-bottom: 16px;
     }
-
 </style>
