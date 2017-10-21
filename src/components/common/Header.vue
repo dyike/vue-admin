@@ -1,17 +1,23 @@
 <template>
     <div class="header">
-        <div class="logo">后台管理系统</div>
-        <div class="user-info">
+        <el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">{{collapsed?'':systemName}}</el-col>
+        <el-col :span="10">
+            <div class="tools" @click.prevent="collapse">
+                <i class="el-icon-menu"></i>
+            </div>
+        </el-col>
+        <el-col :span="10" class="user-info">
             <el-dropdown>
-                <span class="el-dropdown-link">
-                    <img class="user-logo" src="../../../static/img/img.jpg">
+                <span class="el-dropdown-link userinfo-inner">
+                    <img class="user-avatar" :src="this.useravatar" />
                     {{username}}
                 </span>
                 <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>设置</el-dropdown-item>
                     <el-dropdown-item @click.native="logout">退出</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
-        </div>
+        </el-col>
     </div>
 </template>
 
@@ -19,7 +25,10 @@
     export default {
         data() {
             return {
-                name: 'ityike'
+                systemName: '后台管理系统',
+                collapsed: false,
+                username: 'ityike',
+                useravatar: '../../../static/img/img.jpg'
             }
         },
         computed: {
@@ -29,7 +38,7 @@
             }
         },
         methods: {
-            logout: function () {
+            logout: function() {
                 var _this = this
                 this.$confirm('确认退出吗?', '提示', {
 
@@ -39,12 +48,18 @@
                 }).catch(() => {
 
                 })
+            },
+
+            // 折叠导航栏
+            collapse: function() {
+                this.collapsed = !this.collapsed
             }
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    @import '~scss_vars';
     .header {
         position: relative;
         box-sizing: border-box;
@@ -53,41 +68,45 @@
         font-size: 22px;
         line-height: 70px;
         color: #fff;
-    }
+        .logo {
+            padding-left: 20px;
+            padding-right: 20px;
+            border-color: rgba(238,241,146,0.3);
+            border-right-width: 1px;
+            border-right-style: solid;
+        }
+        .logo-width {
+            width: 250px;
+        }
+        .logo-collapse-width {
+            width: 70px;
+        }
 
-    .header .logo {
-        float: left;
-        width: 200px;
-        text-align: center;
-    }
+        .tools {
+            padding: 0px 23px;
+            width: 14px;
+            cursor: pointer;
+        }
 
-    .user-info {
-        float: right;
-        padding-right: 80px;
-        font-size: 16px;
-        color: #fff;
-    }
+        .user-info {
+            text-align: right;
+            float: right;
+            padding-right: 35px;
+            .userinfo-inner {
+                color: #fff;
+                cursor: pointer;
+            }
 
-    .user-info .el-dropdown-link {
-        position: relative;
-        display: inline-block;
-        padding-left: 60px;
-        color: #fff;
-        cursor: pointer;
-        vertical-align: middle;
+            .user-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                margin: 10px 10px 10px 10px;
+                float: right;
+            }
+        }
     }
-
-    .user-info .user-logo {
-        position: absolute;
-        left: 0;
-        top: 16px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-    }
-
     .el-dropdown-menu__item {
         text-align: center;
     }
-
 </style>
