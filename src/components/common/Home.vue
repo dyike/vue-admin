@@ -1,7 +1,9 @@
 <template>
     <el-row class="wrapper">
         <el-col class="header">
-            <el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">{{collapsed?'':systemName}}</el-col>
+            <el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
+                {{collapsed?'':systemName}}
+            </el-col>
             <el-col :span="10">
                 <div class="tools" @click.prevent="collapse">
                     <i class="el-icon-menu"></i>
@@ -24,21 +26,14 @@
         <el-col :span="24" class="main">
             <aside :class="collapsed?'menu-collapsed':'menu-expanded'">
                 <!-- 导航菜单展开 -->
-                <el-menu :default-active="$route.path"
-                    class="el-menu-vertical-demo"
-                    theme="dark"
-                    unique-opened
-                    router
-                    v-show="!collapsed"
-                    @open="handleOpen"
-                    @close="handleClose"
-                    @select="handleSelect">
-                    <template v-for="(item, index) in $router.options.routes" v-if="!item.hidden">
+                <el-menu :default-active="$route.path" theme="dark" class="el-menu-vertical-demo" @open="handleopen" @close="handleclose" @select="handleselect"
+                     unique-opened router v-show="!collapsed">
+                    <template v-for="(item,index) in $router.options.routes" v-if="!item.hidden">
                         <el-submenu :index="index+''" v-if="!item.leaf">
                             <template slot="title"><i :class="item.iconCls"></i>{{item.name}}</template>
                             <el-menu-item v-for="child in item.children" :index="child.path" :key="child.path" v-if="!child.hidden">{{child.name}}</el-menu-item>
-                            <el-menu-item v-if="item.leaf&&item.children.length>0" :index="item.children[0].path"><i :class="item.iconCls"></i>{{item.children[0].name}}</el-menu-item>
                         </el-submenu>
+                        <el-menu-item v-if="item.leaf&&item.children.length>0" :index="item.children[0].path"><i :class="item.iconCls"></i>{{item.children[0].name}}</el-menu-item>
                     </template>
                 </el-menu>
                 <!--导航菜单-折叠后-->
@@ -104,17 +99,17 @@
 
                 })
             },
-            handleClose: function() {
+            handleclose: function() {
 
             },
-            handleOpen: function() {
+            handleopen: function() {
 
             },
-            handleSelect: function(a, b) {
+            handleselect: function(a, b) {
 
             },
             showMenu(i, status) {
-                this.$reds.menuCollapsed.getElementsByClassName('submenu-hook-' + i)[0].style.display=status?'block':'none'
+                this.$refs.menuCollapsed.getElementsByClassName('submenu-hook-'+i)[0].style.display=status?'block':'none';
             },
 
             // 折叠导航栏
@@ -156,13 +151,16 @@
                 font-size: 22px;
                 padding-left: 20px;
                 padding-right: 20px;
-                border-color: rgba(238,241,146,0.3);
+                border-color: rgba(238, 241, 146, 0.3);
                 border-right-width: 1px;
                 border-right-style: solid;
                 img {
                     width: 40px;
                     float: left;
                     margin: 10px 10px 10px 18px;
+                }
+                .txt {
+                    color: #fff;
                 }
             }
             .logo-width {
@@ -171,10 +169,10 @@
             .logo-collapse-width {
                 width: 70px;
             }
-
             .tools {
                 padding: 0px 23px;
                 width: 14px;
+                height: 70px;
                 line-height: 70px;
                 cursor: pointer;
             }
@@ -208,11 +206,11 @@
                 }
             }
             .menu-collapsed {
-                flex: 0 0 70px;
-                width: 70px;
+                flex:0 0 70px;
+                width: 60px;
             }
             .menu-expanded {
-                flex: 0 0 250px;
+                flex:0 0 250px;
                 width: 250px;
             }
 
