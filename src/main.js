@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'    // 默认主题
 import 'simplemde/dist/simplemde.min.css'
@@ -10,11 +11,12 @@ import VueQuillEditor from 'vue-quill-editor'
 
 
 
+
+
 // Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(VueQuillEditor)
-
 
 new Vue({
   router,

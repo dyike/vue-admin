@@ -1,6 +1,8 @@
 <template>
     <div class="sidebar">
-        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+        <aside :class="collapsed?'menu-collapsed':'menu-expanded'">
+            <!-- 导航菜单展开 -->
+        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router v-show="!collapsed">
             <el-menu-item index="/about">
                 <i class="el-icon-information"></i>介绍
             </el-menu-item>
@@ -34,10 +36,16 @@
             </el-menu-item>
 
         </el-menu>
+        </aside>
     </div>
 </template>
 <script>
     export default {
+        data() {
+            return {
+                collapsed: false
+            }
+        },
         computed: {
             onRoutes() {
                 return this.$route.path.replace('/', '')

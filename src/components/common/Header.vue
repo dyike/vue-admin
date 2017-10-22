@@ -6,7 +6,7 @@
                 <i class="el-icon-menu"></i>
             </div>
         </el-col>
-        <el-col :span="10" class="user-info">
+        <el-col :span="10" class="userinfo">
             <el-dropdown>
                 <span class="el-dropdown-link userinfo-inner">
                     <img class="user-avatar" :src="this.useravatar" />
@@ -59,16 +59,14 @@
 </script>
 
 <style scoped lang="scss">
-    @import '~scss_vars';
     .header {
-        position: relative;
-        box-sizing: border-box;
+        position: absolute;
+        // box-sizing: border-box;
         width: 100%;
-        height: 70px;
-        font-size: 22px;
         line-height: 70px;
         color: #fff;
         .logo {
+            font-size: 22px;
             padding-left: 20px;
             padding-right: 20px;
             border-color: rgba(238,241,146,0.3);
@@ -85,28 +83,25 @@
         .tools {
             padding: 0px 23px;
             width: 14px;
+            line-height: 70px;
             cursor: pointer;
         }
 
-        .user-info {
+        .userinfo {
             text-align: right;
-            float: right;
             padding-right: 35px;
+            float: right;
             .userinfo-inner {
                 color: #fff;
                 cursor: pointer;
-            }
-
-            .user-avatar {
-                width: 40px;
-                height: 40px;
-                border-radius: 20px;
-                margin: 10px 10px 10px 10px;
-                float: right;
+                .user-avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 20px;
+                    margin: 10px 0px 10px 10px;
+                    float: right;
+                }
             }
         }
-    }
-    .el-dropdown-menu__item {
-        text-align: center;
     }
 </style>
