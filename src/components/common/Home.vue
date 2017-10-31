@@ -164,10 +164,10 @@
                 }
             }
             .logo-width {
-                width: 250px;
+                width: 250px !important;
             }
             .logo-collapse-width {
-                width: 70px;
+                width: 70px !important;
             }
             .tools {
                 padding: 0px 25px;
@@ -207,6 +207,9 @@
             .menu-expanded {
                 flex: 0 0 250px;
                 width: 250px;
+                .el-menu {
+                    width: auto !important;
+                }
             }
             .menu-collapsed {
                 flex: 0 0 70px;
