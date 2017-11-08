@@ -10,9 +10,6 @@ import 'simplemde/dist/simplemde.min.css'
 import VueQuillEditor from 'vue-quill-editor'
 
 
-
-
-
 // Vue.config.productionTip = false
 
 Vue.use(ElementUI)
