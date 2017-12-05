@@ -179,6 +179,7 @@
 
         .main {
             display: flex;
+            width: 100%;
             position: absolute;
             top: 70px;
             bottom: 0px;
@@ -215,19 +216,15 @@
                 flex: 0 0 70px;
                 width: 70px;
             }
-
-
-            .content-container {
-                flex: 1;
-                overflow-y: scroll;
-                padding: 20px;
-
-                .content-wrapper {
-                    background-color: #fff;
-                    box-sizing: border-box;
-                }
+        }
+        .content-container {
+            flex: 1;
+            overflow-y: scroll;
+            padding: 60px;
+            .content-wrapper {
+                background-color: #fff;
+                box-sizing: border-box;
             }
         }
-
     }
 </style>
